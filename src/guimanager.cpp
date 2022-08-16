@@ -10,7 +10,7 @@
 
 #include <bx/string.h>      // bx::snprintf
 
-#include <cmft/callbacks.h> // cmft::setCallback
+//#include <cmft/callbacks.h> // cmft::setCallback
 
 #include <bx/string.h>
 #include <bx/thread.h>      // bx::MutexScope
@@ -326,7 +326,7 @@ static const char* printfVargs(const char* _format, va_list _argList)
 //-----
 
 static OutputWindowState* s_outputWindowState;
-
+/*
 struct PrintCallback: public cmft::PrintCallbackI
 {
     virtual ~PrintCallback()
@@ -344,13 +344,13 @@ struct PrintCallback: public cmft::PrintCallbackI
     }
 };
 static PrintCallback s_printCallback;
-
+*/
 void outputWindowInit(OutputWindowState* _state)
 {
     s_outputWindowState = _state;
 
     // Redirect cmft output to output window.
-    cmft::setCallback(&s_printCallback);
+//    cmft::setCallback(&s_printCallback);
 }
 
 void outputWindowPrint(const char* _format, ...)
